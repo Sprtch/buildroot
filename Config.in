@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_sprtch_PATH/package/python-evdev/Config.in"
