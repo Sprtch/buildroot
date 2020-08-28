@@ -1,0 +1,8 @@
+config BR2_PACKAGE_HURON
+    bool "huron"
+    depends on BR2_PACKAGE_PYTHON3
+    depends on BR2_PACKAGE_REDIS
+    depends on BR2_PACKAGE_NGINX
+    select BR2_PACKAGE_PYTHON_REDIS
+    help
+        Sprtch printer web page.
