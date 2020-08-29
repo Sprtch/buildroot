@@ -1,4 +1,5 @@
 source "$BR2_EXTERNAL_sprtch_PATH/package/python-evdev/Config.in"
+source "$BR2_EXTERNAL_sprtch_PATH/package/python-flask-script/Config.in"
 source "$BR2_EXTERNAL_sprtch_PATH/package/huron/Config.in"
 source "$BR2_EXTERNAL_sprtch_PATH/package/sprtch-victoria/Config.in"
 source "$BR2_EXTERNAL_sprtch_PATH/package/sprtch-erie/Config.in"

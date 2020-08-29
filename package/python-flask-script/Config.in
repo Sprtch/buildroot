@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_FLASK_SCRIPT
+	bool "python-flask-script"
+	depends on BR2_PACKAGE_PYTHON3
+	help
+	  Flask support for writing external scripts.
