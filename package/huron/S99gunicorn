@@ -1,23 +1,9 @@
-#! /bin/bash
-### BEGIN INIT INFO
-# Provides:          yourapp
-# Required-Start:    nginx
-# Required-Stop:
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: The main django process
-# Description:       The gunicorn process that receives HTTP requests
-#                    from nginx
-#
-### END INIT INFO
-#
-# Author:       mle <geobi@makina-corpus.net>
-#
+#! /bin/sh
 APPNAME=huron
 USER=root
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-ACTIVATE=/www/$APPNAME/env/bin/activate
-APPMODULE=$APPNAME.wsgi:application
+ACTIVATE=/www/$APPNAME/venv/bin/activate
+APPMODULE=$APPNAME.wsgi:app
 DAEMON=gunicorn
 BIND=127.0.0.1:8000
 PIDFILE=/var/run/gunicorn.pid
@@ -26,15 +12,12 @@ WORKERS=2
 
 case "$1" in
   start)
-        log_daemon_msg "Starting deferred execution scheduler" "$APPNAME"
         source $ACTIVATE
+        cd /www/$APPNAME
         $DAEMON --daemon --bind=$BIND --pid=$PIDFILE --workers=$WORKERS --user=$USER --log-file=$LOGFILE $APPMODULE
-        log_end_msg $?
     ;;
   stop)
-        log_daemon_msg "Stopping deferred execution scheduler" "APPNAME"
         killproc -p $PIDFILE $DAEMON
-        log_end_msg $?
     ;;
   force-reload|restart)
     $0 stop
