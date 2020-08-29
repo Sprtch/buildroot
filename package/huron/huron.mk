@@ -18,6 +18,10 @@ define HURON_INSTALL_TARGET_CMDS
 	$(INSTALL) -D -m 0644 $(BR2_EXTERNAL_sprtch_PATH)/package/huron/nginx.conf \
 		$(TARGET_DIR)/etc/nginx/nginx.conf
 	$(INSTALL) -d $(TARGET_DIR)/www/huron
+	$(INSTALL) -D -m 0644 $(@D)/requirements.txt $(TARGET_DIR)/www/huron/requirements.txt
+	$(INSTALL) -D -m 0644 $(@D)/README.md $(TARGET_DIR)/www/huron/README.md
+	$(INSTALL) -D -m 0644 $(@D)/setup.py $(TARGET_DIR)/www/huron/setup.py
+	$(INSTALL) -D -m 0755 $(@D)/manage.py $(TARGET_DIR)/www/huron/manage.py
 	cp -r $(@D)/build $(@D)/huron $(TARGET_DIR)/www/huron/
 endef
 
