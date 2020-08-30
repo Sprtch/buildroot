@@ -1,0 +1,7 @@
+config BR2_PACKAGE_VICTORIA
+    bool "victoria"
+    depends on BR2_PACKAGE_PYTHON3
+    depends on BR2_PACKAGE_REDIS
+    select BR2_PACKAGE_PYTHON_REDIS
+    help
+        Sprtch package to interface 
