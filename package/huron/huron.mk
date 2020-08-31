@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-HURON_VERSION = 5258bc49fe38bc984354964b283a516659f07ba9
+HURON_VERSION = 69f3151e8c553be76812c4614de79a6a73e94067
 HURON_SITE = $(call github,Sprtch,huron,$(HURON_VERSION))
 HURON_LICENSE = MIT
 HURON_LICENSE_FILES = LICENSE
@@ -18,10 +18,12 @@ endef
 
 HURON_PRE_BUILD_HOOKS += HURON_BUILD_FRONTEND
 
-define HURON_POST_INSTALL_HOOKS
+define HURON_INSTALL_NGINX
 	$(INSTALL) -D -m 0644 $(BR2_EXTERNAL_sprtch_PATH)/package/huron/nginx.conf \
 		$(TARGET_DIR)/etc/nginx/nginx.conf
 endef
+
+HURON_POST_INSTALL_TARGET_HOOKS += HURON_INSTALL_NGINX
 
 define HURON_INSTALL_INIT_SYSV
 	$(INSTALL) -D -m 0755 $(BR2_EXTERNAL_sprtch_PATH)/package/huron/S99gunicorn \

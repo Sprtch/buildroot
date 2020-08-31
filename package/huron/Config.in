@@ -4,5 +4,9 @@ config BR2_PACKAGE_HURON
     depends on BR2_PACKAGE_REDIS
     depends on BR2_PACKAGE_NGINX
     select BR2_PACKAGE_PYTHON_REDIS
+    select BR2_PACKAGE_PYTHON_FLASK
+    select BR2_PACKAGE_PYTHON_FLASK_SQLALCHEMY
+    select BR2_PACKAGE_PYTHON_FLASK_SCRIPT
+    select BR2_PACKAGE_PYTHON_GUNICORN
     help
         Sprtch printer web page.
