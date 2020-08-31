@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_SQLALCHEMY_UTILS
+	bool "python-sqlalchemy-utils"
+	depends on BR2_PACKAGE_PYTHON3
+	help
+	  Various utility functions and custom data types for SQLAlchemy.
