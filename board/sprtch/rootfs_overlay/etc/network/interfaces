@@ -7,6 +7,10 @@ iface wlan0 inet dhcp
   post-down killall -q wpa_supplicant
 
 auto eth0
-iface eth0 inet dhcp
+iface eth0 inet static
+  address 192.168.8.1
+  netmask 255.255.255.0
+  network 192.168.8.0
+  broadcast 192.168.8.255
 
 iface default inet dhcp
