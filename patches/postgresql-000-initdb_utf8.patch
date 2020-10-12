@@ -1,0 +1,13 @@
+diff --git a/package/postgresql/S50postgresql b/package/postgresql/S50postgresql
+index 1ece4fca9e..e22a908900 100644
+--- a/package/postgresql/S50postgresql
++++ b/package/postgresql/S50postgresql
+@@ -7,7 +7,7 @@ umask 077
+ 
+ if [ ! -f /var/lib/pgsql/PG_VERSION ]; then
+ 	echo "Initializing postgresql data base..."
+-	su - postgres -c '/usr/bin/pg_ctl initdb -D /var/lib/pgsql'
++	su - postgres -c '/usr/bin/initdb -E UTF8 -D /var/lib/pgsql'
+ 	echo "done"
+ fi
+ 
