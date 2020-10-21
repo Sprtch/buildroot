@@ -1,0 +1,8 @@
+config BR2_PACKAGE_SPRTCH_ERIE
+    bool "erie"
+    depends on BR2_PACKAGE_PYTHON3
+    depends on BR2_PACKAGE_REDIS
+    select BR2_PACKAGE_PYTHON_REDIS
+    select BR2_PACKAGE_PYTHON_EVDEV
+    help
+        Sprtch barcode scanner interface.
