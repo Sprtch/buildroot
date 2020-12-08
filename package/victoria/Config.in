@@ -3,5 +3,6 @@ config BR2_PACKAGE_VICTORIA
     depends on BR2_PACKAGE_PYTHON3
     depends on BR2_PACKAGE_REDIS
     select BR2_PACKAGE_PYTHON_REDIS
+    select BR2_PACKAGE_DESPINASSY
     help
         Sprtch package to interface 

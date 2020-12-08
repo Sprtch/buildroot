@@ -1,0 +1,8 @@
+config BR2_PACKAGE_DESPINASSY
+    bool "despinassy"
+    depends on BR2_PACKAGE_PYTHON3
+    select BR2_PACKAGE_PYTHON_FLASK_SQLALCHEMY
+    select BR2_PACKAGE_PYTHON_FLASK_SCRIPT
+    select BR2_PACKAGE_PYTHON_SQLALCHEMY_UTILS
+    help
+        Sprtch Database Schema collection and shared library repository
