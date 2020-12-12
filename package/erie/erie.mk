@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-ERIE_VERSION = ca2180e390dea67dc09308e393cebf487159ec8c
+ERIE_VERSION = 214484278f7f0ca02fb67d0f25c24d512d507aa2
 ERIE_SOURCE = erie-$(ERIE_VERSION).tar.gz
 ERIE_SITE = $(call github,Sprtch,erie,$(ERIE_VERSION))
 ERIE_LICENSE = MIT

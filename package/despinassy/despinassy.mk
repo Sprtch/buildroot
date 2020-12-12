@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-DESPINASSY_VERSION = 27d21f2ae36e5149044bec79a6280f555980d2e7
+DESPINASSY_VERSION = 121625775f24437a8a0c6559b6a95ed9eeebb5ff
 DESPINASSY_SOURCE = despinassy-$(DESPINASSY_VERSION).tar.gz
 DESPINASSY_SITE = $(call github,Sprtch,despinassy,$(DESPINASSY_VERSION))
 DESPINASSY_LICENSE = MIT
