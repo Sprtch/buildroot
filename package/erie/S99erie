@@ -5,21 +5,21 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 APPMODULE=$APPNAME
 PIDFILE=/var/run/$APPNAME.pid
 LOGFILE=/var/log/$APPNAME.log
-WORKERS=2
+CONFIGFILE=/etc/sprtch.yaml
 
 case "$1" in
 start)
-	python -m $APPNAME --logfile $LOGFILE --pid $PIDFILE
+	python -m $APPMODULE --logfile $LOGFILE --pid $PIDFILE --config $CONFIGFILE
 	;;
 stop)
-	killproc -p $PIDFILE $APPNAME
+	killproc -p $PIDFILE $APPMODULE
 	;;
 force-reload | restart)
 	$0 stop
 	$0 start
 	;;
 status)
-	status_of_proc -p $PIDFILE $APPNAME && exit 0 || exit $?
+	status_of_proc -p $PIDFILE $APPMODULE && exit 0 || exit $?
 	;;
 *)
 	echo "Usage: /etc/init.d/$APPNAME {start|stop|restart|force-reload|status}"
