@@ -1,3 +1,6 @@
 #!/bin/sh
 
+su - postgres -c "createdb sprtch"
+python -m despinassy.db
+
 rm /etc/init.d/S55initial
