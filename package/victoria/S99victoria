@@ -12,7 +12,7 @@ start)
 	python -m $APPMODULE --logfile $LOGFILE --pid $PIDFILE --config $CONFIGFILE
 	;;
 stop)
-	killproc -p $PIDFILE $APPMODULE
+	kill -n 9 "$(cat "$PIDFILE")"
 	;;
 force-reload | restart)
 	$0 stop

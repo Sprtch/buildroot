@@ -10,23 +10,23 @@ LOGFILE=/var/log/$DAEMON.log
 WORKERS=2
 
 case "$1" in
-  start)
-        $DAEMON --daemon --bind=$BIND --pid=$PIDFILE --workers=$WORKERS --log-file=$LOGFILE --reload $APPMODULE
-    ;;
-  stop)
-        killproc -p $PIDFILE $DAEMON
-    ;;
-  force-reload|restart)
-    $0 stop
-    $0 start
-    ;;
-  status)
-    status_of_proc -p $PIDFILE $DAEMON && exit 0 || exit $?
-    ;;
-  *)
-    echo "Usage: /etc/init.d/$APPNAME {start|stop|restart|force-reload|status}"
-    exit 1
-    ;;
+start)
+	$DAEMON --daemon --bind=$BIND --pid=$PIDFILE --workers=$WORKERS --log-file=$LOGFILE --reload $APPMODULE
+	;;
+stop)
+	kill -n 9 "$(cat "$PIDFILE")"
+	;;
+force-reload | restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	status_of_proc -p $PIDFILE $DAEMON && exit 0 || exit $?
+	;;
+*)
+	echo "Usage: /etc/init.d/$APPNAME {start|stop|restart|force-reload|status}"
+	exit 1
+	;;
 esac
 
 exit 0
