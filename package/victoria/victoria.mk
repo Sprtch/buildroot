@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-VICTORIA_VERSION = 5453a13fe67ff7e39f31727de05cd29d7bce23a7
+VICTORIA_VERSION = 4c3aba6318e72e1a5ad8e96940967d95bbd29adc
 VICTORIA_SOURCE = victoria-$(VICTORIA_VERSION).tar.gz
 VICTORIA_SITE = $(call github,Sprtch,victoria,$(VICTORIA_VERSION))
 VICTORIA_LICENSE = MIT
