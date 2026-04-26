@@ -22,6 +22,10 @@ cd buildroot
 make BR2_EXTERNAL=../ sprtch_defconfig
 ```
 
+## Flashing the firmware
+
+The sdcard image is in the `/buildroot/output/images/sdcard.img` folder.
+
 ## On package update
 
 When one of the custom package I use has to be updated the first step is to

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-HURON_VERSION = 495b853c5a33b2125e984f4ed254db939e78571a
+HURON_VERSION = 4eba8c84f6876010087cc767ff3b3d0afa5b9c3f
 HURON_SITE = $(call github,Sprtch,huron,$(HURON_VERSION))
 HURON_LICENSE = MIT
 HURON_LICENSE_FILES = LICENSE
